@@ -250,8 +250,7 @@ export default function Home() {
     <main>
       <header className="topbar">
         <a className="brand" href="#overview" aria-label="Enterprise AI Enablement home">
-          <span className="brand-mark">M</span>
-          <span className="brand-copy"><strong>MILLER</strong><small>ENTERPRISE AI ENABLEMENT</small></span>
+          <span className="brand-copy"><img className="brand-logo" src="/miller-logo-white.png" alt="Miller" /><small>ENTERPRISE AI ENABLEMENT</small></span>
         </a>
         <nav className="topnav" aria-label="Primary navigation">
           <a href="#overview">Overview</a><a href="#strategy">Strategy</a><a href="#academy">AI Academy</a><a href="#library">Document Library</a>
@@ -362,7 +361,7 @@ export default function Home() {
         </div>
       </div>
 
-      <footer><div className="brand footer-brand"><span className="brand-mark">M</span><span className="brand-copy"><strong>MILLER</strong><small>ENTERPRISE AI ENABLEMENT</small></span></div><p>Understand the work. Protect the craft. Build what survives.</p><a href="#overview">BACK TO TOP ↑</a></footer>
+      <footer><div className="brand footer-brand"><span className="brand-copy"><img className="brand-logo" src="/miller-logo-white.png" alt="Miller" /><small>ENTERPRISE AI ENABLEMENT</small></span></div><p>Understand the work. Protect the craft. Build what survives.</p><a href="#overview">BACK TO TOP ↑</a></footer>
     </main>
   );
 }
