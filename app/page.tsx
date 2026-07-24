@@ -6,43 +6,43 @@ import { documents } from "./data";
 const pillars = [
   {
     n: "01",
-    name: "Foundation",
-    question: "Why does this deserve to exist?",
-    summary: "Start with business value, shared language, cost, and the burden of proof. AI enablement earns trust by making a falsifiable claim—not by asking the business to believe a demo.",
-    output: "A common language and a clear value test.",
-    sources: ["System Map", "The Burden Belongs to Us", "QUEST", "AI Cost to Serve"],
+    name: "Establish Value",
+    question: "What business result would make this worth doing?",
+    summary: "Begin with a real operating problem, a baseline, a falsifiable claim, clear boundaries, and a reason to stop. The burden of proof belongs to the AI effort—not to the business asked to adopt it.",
+    output: "A legitimate opportunity with a measurable value test.",
+    sources: ["QUEST", "The Golden Stake", "AI Cost to Serve", "Enterprise AI System Map"],
   },
   {
     n: "02",
-    name: "Intelligence Layer",
-    question: "Is the organization ready to build on?",
-    summary: "Make fragmented work legible. Connect intent, context, source authority, user authority, output format, and the next handoff before asking a model to act.",
-    output: "A diagnostic view of readiness and missing infrastructure.",
-    sources: ["Operational Diagnostic", "Work Beneath the Workflow", "Executive Reporting Framework"],
+    name: "Understand the Work",
+    question: "What actually happens beneath the process map?",
+    summary: "Observe the work as people perform it. Surface the judgment, exceptions, relationships, workarounds, and craft that formal process documents routinely miss.",
+    output: "A grounded decision about what to automate, support, or protect.",
+    sources: ["Engagement Playbook", "Hidden Work Interview Guide", "AI Readiness Scoring Rubric"],
   },
   {
     n: "03",
-    name: "Workflow Redesign",
-    question: "What is the real work beneath the process map?",
-    summary: "Observe how work actually happens. Surface the judgment, exceptions, workarounds, relationships, and craft that formal process documents routinely miss.",
-    output: "A decision about what to automate, support, or protect.",
-    sources: ["Engagement Playbook", "Hidden Work Interview Guide", "AI Readiness Rubric"],
+    name: "Make Work Legible",
+    question: "Are context, sources, permissions, and handoffs ready?",
+    summary: "Connect intent, context, source authority, user authority, output format, and the next handoff before asking a model to act. Missing infrastructure becomes visible before it becomes operational risk.",
+    output: "A readiness diagnosis and a map of what must be fixed first.",
+    sources: ["Operational Diagnostic", "Work Beneath the Workflow", "Executive Reporting Framework"],
   },
   {
     n: "04",
-    name: "Responsible Agent Systems",
-    question: "How do we build proof without losing control?",
-    summary: "Use Think, Build, Check. Set authority levels, source-of-truth rules, tool contracts, memory boundaries, approvals, observability, evaluation, and escalation before autonomy.",
-    output: "A bounded system that can be operated and audited.",
+    name: "Build Bounded Proof",
+    question: "How do we prove value without losing control?",
+    summary: "Use Think, Build, Check. Set authority levels, source rules, tool contracts, memory boundaries, approvals, evaluation, observability, and escalation before increasing autonomy.",
+    output: "A bounded system that can be tested, operated, and audited.",
     sources: ["Build Type Profiles", "Agent Project Playbook", "Memory Architecture"],
   },
   {
     n: "05",
-    name: "Scale & Governance",
-    question: "What deserves to scale—and who must understand it?",
-    summary: "Translate evidence into the language leaders, IT, Legal, managers, and employees need. Fund the few workflows that matter, govern the risk, and build capability through the Academy.",
-    output: "A defensible investment and an adoption path.",
-    sources: ["Golden Stake", "Enterprise Policy", "Leadership Platform", "AI Academy"],
+    name: "Scale Capability",
+    question: "What deserves to scale—and who must be ready?",
+    summary: "Translate evidence into the language leaders, IT, Legal, managers, and employees need. Fund the few workflows that matter, govern the risk, and build capability through the AI Academy.",
+    output: "A defensible investment, operating model, and adoption path.",
+    sources: ["Enterprise Policy", "Leadership Platform", "AI Academy", "ITW Way"],
   },
 ];
 
@@ -210,7 +210,39 @@ const terms = [
   ["The Craft Current", "The people-and-work thread beneath every stage: understand what expertise holds the operation together before changing it."],
 ];
 
-const categories = ["All", "Foundation", "Intelligence Layer", "Workflow Redesign", "Agent Build", "Agent Orchestration", "Memory Architecture", "AI Academy", "Leadership", "Research & Signals", "Build Methods", "Archive"];
+const operatingMoves = [
+  { n: "01", verb: "SELECT", title: "Choose work worth proving", description: "Use QUEST and the Golden Stake to name a valuable workflow, its owner, its baseline, its boundary, and the evidence that would justify continuing.", output: "A legitimate opportunity—not a technology demo." },
+  { n: "02", verb: "OBSERVE", title: "Understand the work as it is", description: "Interview the people closest to the work. Map judgment, exceptions, systems, handoffs, and the craft that keeps the operation running.", output: "An automate, support, or protect decision." },
+  { n: "03", verb: "PROVE", title: "Build the smallest bounded system", description: "Match the build type to the job. Define authority, sources, memory, tools, tests, approvals, and escalation before increasing autonomy.", output: "A working proof with evidence and guardrails." },
+  { n: "04", verb: "DECIDE", title: "Scale only what earns it", description: "Review the result with business, IT, Legal, and the people doing the work. Standardize what survives and build adoption through the Academy.", output: "A governed capability with an accountable owner." },
+];
+
+const essentialAssets = [
+  { source: "RampStack System Map", title: "Enterprise AI System Map", stage: "STRATEGY", decision: "See how value, readiness, build discipline, governance, and capability connect." },
+  { source: "QUEST White Paper", title: "QUEST", stage: "VALUE", decision: "Find enterprise value in the work, queues, edges, systems, and human agency around the model." },
+  { source: "The Golden Stake Field Guide", title: "The Golden Stake", stage: "LEGITIMACY", decision: "Test the baseline, claim, boundary, and stop condition before committing time or money." },
+  { source: "04 Intelligence Layer Engagement Playbook", title: "Work Engagement Playbook", stage: "DISCOVERY", decision: "Observe real work and surface the judgment and exceptions a process map misses." },
+  { source: "10 AI Readiness Scoring Rubric", title: "AI Readiness Scoring Rubric", stage: "READINESS", decision: "Score whether a workflow has the context, authority, evidence, and operating conditions to proceed." },
+  { source: "Agent Project Playbook", title: "Agent Project Playbook", stage: "BOUNDED BUILD", decision: "Specify authority, tools, memory, evaluation, approvals, and escalation before deployment." },
+  { source: "AI Readiness One Day Workshop", title: "AI Readiness", stage: "CAPABILITY", decision: "Give employees a safe, practical foundation and a personal starting point." },
+  { source: "Executive Training Syllabus V2", title: "Enterprise Automation Syllabus", stage: "OPERATIONS", decision: "Turn repeatable work into secure workspaces, reusable skills, and operational dashboards." },
+];
+
+const collectionFor = (category: string) => {
+  if (["Foundation", "Leadership"].includes(category)) return "Strategy & Value";
+  if (["Workflow Redesign", "Intelligence Layer"].includes(category)) return "Work & Readiness";
+  if (["Agent Build", "Agent Orchestration", "Memory Architecture", "Build Methods"].includes(category)) return "Build & Operate";
+  if (category === "AI Academy") return "Academy & Adoption";
+  return "Research & Archive";
+};
+
+const displayTitle = (title: string) => title
+  .replace(/^RampStack\s+/i, "")
+  .replace(/^\d+\s+/, "")
+  .replace(/\s+\(\d+\)$/, "");
+
+const displayStatus = (status: string) => status === "Current" ? "Working" : status;
+const categories = ["All", "Strategy & Value", "Work & Readiness", "Build & Operate", "Academy & Adoption", "Research & Archive"];
 
 function sourceUrl(title: string) {
   const value = title.toLowerCase();
@@ -223,15 +255,15 @@ export default function Home() {
   const [courseId, setCourseId] = useState("readiness");
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
-  const [visible, setVisible] = useState(18);
+  const [visible, setVisible] = useState(12);
 
   const courses = academy[audience];
   const course = courses.find((item) => item.id === courseId) || courses[0];
   const results = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return documents.filter((doc) => {
-      const categoryMatch = category === "All" || doc.category === category;
-      const textMatch = !needle || [doc.title, doc.category, doc.audience, doc.brief, doc.useWhen].join(" ").toLowerCase().includes(needle);
+      const categoryMatch = category === "All" || collectionFor(doc.category) === category;
+      const textMatch = !needle || [doc.title, doc.category, collectionFor(doc.category), doc.audience, doc.brief].join(" ").toLowerCase().includes(needle);
       return categoryMatch && textMatch;
     });
   }, [category, query]);
@@ -253,110 +285,168 @@ export default function Home() {
           <span className="brand-copy"><img className="brand-logo" src="/miller-logo-white.png" alt="Miller" /><small>ENTERPRISE AI ENABLEMENT</small></span>
         </a>
         <nav className="topnav" aria-label="Primary navigation">
-          <a href="#overview">Overview</a><a href="#strategy">Strategy</a><a href="#academy">AI Academy</a><a href="#library">Document Library</a>
+          <a href="#strategy">Strategy</a><a href="#operating">Operating plan</a><a href="#academy">AI Academy</a><a href="#evidence">Evidence</a>
         </nav>
         <form className="header-search" onSubmit={submitSearch}>
-          <label className="sr-only" htmlFor="header-search">Search the field manual</label>
-          <input id="header-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search the field manual…" />
-          <button type="submit" aria-label="Search">⌕</button>
+          <label className="sr-only" htmlFor="header-search">Search 117 working sources</label>
+          <input id="header-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={`Search ${documents.length} working sources…`} />
+          <button type="submit" aria-label="Go to matching sources">GO</button>
         </form>
-        <div className="edition">FIELD MANUAL<br /><strong>LIVE INDEX</strong></div>
+        <div className="edition">INTERNAL WORKING VIEW<br /><strong>NOT FOR DISTRIBUTION</strong></div>
       </header>
 
       <section className="hero" id="overview">
         <div className="hero-copy">
-          <p className="eyebrow">A PRACTICAL GUIDE TO OUR ENTERPRISE DIRECTION</p>
+          <p className="eyebrow">A WORKING ENTERPRISE STRATEGY FOR MILLER</p>
           <h1>ENTERPRISE AI<br />ENABLEMENT</h1>
-          <p className="hero-promise">Understand the strategy. <strong>Find the right asset.</strong> Build capability.</p>
+          <p className="hero-thesis">A system for finding, proving, governing, and scaling AI value—without losing the judgment and craft that make the work good.</p>
+          <p className="hero-promise">See the strategy. <strong>Understand what is ready.</strong> Choose the next move.</p>
         </div>
         <div className="hero-orientation">
-          <div><span className="white-rule" /><h2>NEW TO THE<br />MATERIAL?</h2><p>Start with the five-part strategy, then use the Academy path to build the skills to put it into practice.</p><a className="button button-light" href="#orientation">TAKE THE 5-MINUTE ORIENTATION →</a></div>
+          <div>
+            <span className="white-rule" />
+            <p className="hero-panel-label">WHAT IS READY NOW</p>
+            <h2>THE STRUCTURE<br />EXISTS</h2>
+            <ul className="ready-list">
+              <li><strong>05</strong><span>strategic moves from value to scale</span></li>
+              <li><strong>04</strong><span>steps from opportunity to governed proof</span></li>
+              <li><strong>04</strong><span>Academy audiences with practical outcomes</span></li>
+              <li><strong>{documents.length}</strong><span>working sources, tools, and research records</span></li>
+            </ul>
+            <a className="button button-light" href="#strategy">SEE THE STRATEGY →</a>
+          </div>
         </div>
       </section>
 
-      <section className="orientation" id="orientation">
-        <div className="orientation-title"><strong>START HERE</strong><span>A three-stop orientation</span></div>
-        <a href="#strategy"><b>01</b><span><strong>SEE THE DIRECTION</strong>Understand the five strategy pillars</span></a>
-        <a href="#academy"><b>02</b><span><strong>BUILD CAPABILITY</strong>Choose your place in the Academy path</span></a>
-        <a href="#library"><b>03</b><span><strong>USE THE EVIDENCE</strong>Find the document for your next decision</span></a>
+      <section className="orientation" aria-label="Start here">
+        <div className="orientation-title"><strong>START HERE</strong><span>The shortest path through the work</span></div>
+        <a href="#strategy"><b>01</b><span><strong>SEE THE DIRECTION</strong>Five moves from value to scale</span></a>
+        <a href="#operating"><b>02</b><span><strong>SEE THE PLAN</strong>Four steps from selection to adoption</span></a>
+        <a href="#next"><b>03</b><span><strong>FIND YOUR ENTRY</strong>Choose the responsibility closest to yours</span></a>
       </section>
 
       <div className="manual-shell">
         <aside className="field-index">
-          <h2>FIELD INDEX</h2>
-          <nav aria-label="Field manual sections">
-            <a href="#strategy"><span>01</span>Enterprise strategy</a><a href="#academy"><span>02</span>AI Academy path</a><a href="#library"><span>03</span>Document library</a><a href="#terms"><span>04</span>Key terms & models</a><a href="#next"><span>05</span>Where to start</a>
+          <h2>WORKING INDEX</h2>
+          <nav aria-label="Dashboard sections">
+            <a href="#strategy"><span>01</span>Enterprise strategy</a>
+            <a href="#operating"><span>02</span>Operating plan</a>
+            <a href="#next"><span>03</span>Where you fit</a>
+            <a href="#academy"><span>04</span>AI Academy</a>
+            <a href="#evidence"><span>05</span>Essential assets</a>
+            <a href="#library"><span>06</span>Full evidence index</a>
+            <a href="#terms"><span>07</span>Working language</a>
           </nav>
-          <div className="index-stat"><strong>{documents.length}</strong><span>unique source documents</span></div>
-          <div className="index-stat"><strong>05</strong><span>strategy pillars</span></div>
+          <div className="index-stat"><strong>05</strong><span>strategy moves</span></div>
           <div className="index-stat"><strong>04</strong><span>Academy audiences</span></div>
+          <div className="index-stat"><strong>{documents.length}</strong><span>working sources</span></div>
         </aside>
 
         <div className="manual-content">
-          <section className="manual-section" id="strategy">
-            <div className="section-heading"><div><p className="section-kicker">01 / ENTERPRISE STRATEGY</p><h2>THE SYSTEM, IN FIVE PARTS</h2></div><p>Each pillar solves a different part of the same problem: turning fragmented AI activity into repeatable enterprise capability.</p></div>
+          <section className="manual-section strategy-section" id="strategy">
+            <div className="section-heading">
+              <div><p className="section-kicker">01 / ENTERPRISE STRATEGY</p><h2>FIVE MOVES FROM VALUE TO SCALE</h2></div>
+              <p>The strategy begins with business value and real work—not a model. Each move produces the evidence and operating conditions required for the next.</p>
+            </div>
             <div className="pillar-grid">
               {pillars.map((item, index) => <button key={item.n} className={pillar === index ? "pillar active" : "pillar"} onClick={() => setPillar(index)} aria-pressed={pillar === index}><span className="pillar-number">{item.n}</span><strong>{item.name}</strong><small>{item.question}</small></button>)}
             </div>
             <div className="pillar-detail" aria-live="polite">
-              <div><p className="detail-label">{pillars[pillar].n} / WHY IT MATTERS</p><h3>{pillars[pillar].question}</h3><p>{pillars[pillar].summary}</p></div>
+              <div><p className="detail-label">{pillars[pillar].n} / THE STRATEGIC QUESTION</p><h3>{pillars[pillar].question}</h3><p>{pillars[pillar].summary}</p></div>
               <div className="detail-outcome"><span>THE OUTPUT</span><strong>{pillars[pillar].output}</strong><ul>{pillars[pillar].sources.map((item) => <li key={item}>{item}</li>)}</ul></div>
             </div>
-            <div className="craft-current"><span>THE CURRENT BENEATH EVERY STAGE</span><strong>Understand the work. Protect the craft. Build what survives.</strong><p>The human impact is not another box. It runs beneath the entire system—from proving value to setting agent authority and communicating change.</p></div>
+            <div className="craft-current"><span>NON-NEGOTIABLE PRINCIPLE</span><strong>Protect expertise, judgment, and accountability at every stage.</strong><p>Human impact is not a final change-management step. It shapes what deserves to be built, how authority is assigned, and what must remain human-owned.</p></div>
+          </section>
+
+          <section className="manual-section operating-section" id="operating">
+            <div className="section-heading">
+              <div><p className="section-kicker">02 / OPERATING PLAN</p><h2>FROM OPPORTUNITY TO GOVERNED PROOF</h2></div>
+              <p>This is how the strategy moves. Each step has a decision, a practical method, and an output that earns the right to continue.</p>
+            </div>
+            <div className="operating-grid">
+              {operatingMoves.map((move) => <article className="operating-move" key={move.n}><div className="move-head"><span>{move.n}</span><b>{move.verb}</b></div><h3>{move.title}</h3><p>{move.description}</p><div className="move-output"><small>OUTPUT</small><strong>{move.output}</strong></div></article>)}
+            </div>
+            <div className="next-decision"><div><p className="detail-label">THE FIRST ENTERPRISE MOVE</p><h3>Choose one or two workflows worth proving—not a portfolio of disconnected pilots.</h3></div><p>Give each workflow a business owner, baseline, claim, boundary, and stop condition. Then observe the work before choosing the technology.</p></div>
+          </section>
+
+          <section className="manual-section next-section" id="next">
+            <div className="section-heading">
+              <div><p className="section-kicker">03 / WHERE YOU FIT</p><h2>CHOOSE THE RESPONSIBILITY CLOSEST TO YOURS</h2></div>
+              <p>You do not need to read the library in order. Start with the decision you are responsible for, then use the Academy and essential assets to move.</p>
+            </div>
+            <div className="journey-grid">
+              <a href="#academy" onClick={() => chooseAudience("Employees")}><span>EMPLOYEE</span><strong>Build a safe foundation</strong><p>Understand what AI can do, choose an appropriate first task, and keep judgment in control.</p></a>
+              <a href="#academy" onClick={() => chooseAudience("Managers")}><span>MANAGER</span><strong>Guide adoption with evidence</strong><p>Help teams choose good work, ask better questions, and protect the expertise the process depends on.</p></a>
+              <a href="#academy" onClick={() => chooseAudience("Leaders")}><span>LEADER</span><strong>Fund and govern what matters</strong><p>Use QUEST and the Golden Stake to choose where the enterprise should invest—and where it should stop.</p></a>
+              <a href="#academy" onClick={() => chooseAudience("Builders")}><span>BUILDER</span><strong>Build proof with boundaries</strong><p>Match the system to the job, set authority, and make the result testable, observable, and auditable.</p></a>
+            </div>
           </section>
 
           <section className="manual-section academy-section" id="academy">
-            <div className="section-heading"><div><p className="section-kicker">02 / MILLER AI ACADEMY</p><h2>TURN THE STRATEGY INTO CAPABILITY</h2></div><p>The Academy is the delivery engine for the strategy. Choose an audience to see the right path, outcomes, and leave-behinds.</p></div>
+            <div className="section-heading">
+              <div><p className="section-kicker">04 / MILLER AI ACADEMY</p><h2>TURN THE STRATEGY INTO CAPABILITY</h2></div>
+              <p>Choose the perspective closest to what you need to do. Employee programs form a progression; manager, leader, and builder offerings are selected by responsibility.</p>
+            </div>
             <div className="audience-tabs" role="tablist" aria-label="Academy audiences">
-              {Object.keys(academy).map((name) => <button key={name} className={audience === name ? "active" : ""} onClick={() => chooseAudience(name)} role="tab" aria-selected={audience === name}>{name}</button>)}
+              {Object.keys(academy).map((name) => <button key={name} id={`tab-${name.toLowerCase()}`} className={audience === name ? "active" : ""} onClick={() => chooseAudience(name)} role="tab" aria-selected={audience === name} aria-controls="academy-panel" tabIndex={audience === name ? 0 : -1}>{name}</button>)}
             </div>
+            <div className="academy-context"><strong>{audience === "Employees" ? "RECOMMENDED LEARNING PATH" : `${audience.toUpperCase()} OFFERINGS`}</strong><span>{audience === "Employees" ? "Move from foundation to applied work redesign." : "Choose the offering that matches the decision in front of you."}</span></div>
             <div className="academy-path">
-              {courses.map((item, index) => <button key={item.id} className={course.id === item.id ? "course-step active" : "course-step"} onClick={() => setCourseId(item.id)}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.title}</strong><small>{item.format}</small></button>)}
+              {courses.map((item, index) => <button key={item.id} className={course.id === item.id ? "course-step active" : "course-step"} onClick={() => setCourseId(item.id)} aria-pressed={course.id === item.id}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.title}</strong><small>{item.format}</small></button>)}
             </div>
-            <article className="course-detail" aria-live="polite">
-              <div className="course-main"><p className="detail-label">{course.for} / {course.format}</p><h3>{course.title}</h3><h4>{course.subtitle}</h4><p>{course.description}</p><a className="text-link" href={sourceUrl(course.source)} target="_blank" rel="noreferrer">OPEN THE SOURCE DOCUMENT →</a></div>
+            <article className="course-detail" id="academy-panel" role="tabpanel" aria-labelledby={`tab-${audience.toLowerCase()}`} aria-live="polite">
+              <div className="course-main"><p className="detail-label">{course.for} / {course.format}</p><h3>{course.title}</h3><h4>{course.subtitle}</h4><p>{course.description}</p><a className="text-link" href={sourceUrl(course.source)} target="_blank" rel="noreferrer">OPEN {course.title.toUpperCase()} SOURCE →</a></div>
               <div className="course-outcomes"><span>WHAT YOU LEAVE ABLE TO DO</span><ul>{course.outcomes.map((item) => <li key={item}>{item}</li>)}</ul><div className="leave-behind"><small>LEAVE-BEHIND</small><strong>{course.artifact}</strong></div></div>
             </article>
           </section>
 
-          <section className="manual-section library-section" id="library">
-            <div className="section-heading"><div><p className="section-kicker">03 / DOCUMENT LIBRARY</p><h2>FIND THE RIGHT SOURCE, FAST</h2></div><p>Every card answers three questions: what is this, why does it matter, and when should I use it?</p></div>
-            <div className="library-tools">
-              <div className="library-search"><label htmlFor="library-search">SEARCH ALL {documents.length} DOCUMENTS</label><input id="library-search" value={query} onChange={(event) => { setQuery(event.target.value); setVisible(18); }} placeholder="Try “governance,” “memory,” “manager,” or “workflow”…" /></div>
-              <div className="result-count"><strong>{results.length}</strong><span>matching documents</span></div>
+          <section className="manual-section evidence-section" id="evidence">
+            <div className="section-heading">
+              <div><p className="section-kicker">05 / ESSENTIAL OPERATING KIT</p><h2>START WITH THE ASSETS THAT MOVE A DECISION</h2></div>
+              <p>These are the shortest path through the evidence. Each asset supports a specific stage of the strategy and a decision someone must make.</p>
             </div>
-            <div className="category-filters" aria-label="Document categories">
-              {categories.map((name) => <button key={name} className={category === name ? "active" : ""} onClick={() => { setCategory(name); setVisible(18); }}>{name}</button>)}
+            <div className="essential-grid">
+              {essentialAssets.map((asset, index) => {
+                const doc = documents.find((item) => item.title === asset.source);
+                if (!doc) return null;
+                return <article className="essential-card" key={asset.source}><div className="essential-head"><span>{String(index + 1).padStart(2, "0")}</span><b>{asset.stage}</b></div><h3>{asset.title}</h3><p>{asset.decision}</p><div className="essential-meta"><span><small>FOR</small>{doc.audience}</span><span><small>FORMAT</small>{doc.format}</span></div><a href={doc.url} target="_blank" rel="noreferrer" aria-label={`Open ${asset.title} source`}>OPEN SOURCE →</a></article>;
+              })}
+            </div>
+          </section>
+
+          <section className="manual-section library-section" id="library">
+            <div className="section-heading">
+              <div><p className="section-kicker">06 / FULL EVIDENCE INDEX</p><h2>GO DEEPER ONLY WHEN THE DECISION REQUIRES IT</h2></div>
+              <p>Use the complete index for supporting detail. The collections follow the strategy instead of the original folder structure.</p>
+            </div>
+            <div className="library-tools">
+              <div className="library-search"><label htmlFor="library-search">SEARCH {documents.length} WORKING SOURCES</label><input id="library-search" value={query} onChange={(event) => { setQuery(event.target.value); setVisible(12); }} placeholder="Search a decision, audience, method, or topic…" /></div>
+              <div className="result-count" aria-live="polite"><strong>{results.length}</strong><span>matching sources</span></div>
+            </div>
+            <div className="category-filters" aria-label="Evidence collections">
+              {categories.map((name) => <button key={name} className={category === name ? "active" : ""} aria-pressed={category === name} onClick={() => { setCategory(name); setVisible(12); }}>{name}</button>)}
             </div>
             <div className="document-grid">
               {results.slice(0, visible).map((doc) => (
                 <article className="document-card" key={doc.id}>
-                  <div className="document-meta"><span>{doc.category}</span><b className={"status status-" + doc.status.toLowerCase()}>{doc.status}</b></div>
-                  <h3>{doc.title}</h3><p>{doc.brief}</p>
+                  <div className="document-meta"><span>{collectionFor(doc.category)} / {doc.category}</span><b className={`status status-${displayStatus(doc.status).toLowerCase()}`}>{displayStatus(doc.status)}</b></div>
+                  <h3>{displayTitle(doc.title)}</h3><p>{doc.brief}</p>
                   <div className="document-facts"><span><small>FOR</small>{doc.audience}</span><span><small>FORMAT</small>{doc.format} · {doc.duration}</span></div>
-                  <details><summary>WHEN TO USE THIS</summary><p>{doc.useWhen}</p>{doc.sourceFiles > 1 && <p className="duplicate-note">{doc.sourceFiles} source copies were grouped into this brief.</p>}</details>
-                  <a href={doc.url} target="_blank" rel="noreferrer">OPEN SOURCE →</a>
+                  <a href={doc.url} target="_blank" rel="noreferrer" aria-label={`Open ${displayTitle(doc.title)} source`}>OPEN SOURCE →</a>
                 </article>
               ))}
             </div>
-            {results.length === 0 && <div className="empty-state"><strong>NO EXACT MATCH</strong><p>Try a broader term or return to “All” categories.</p></div>}
-            {visible < results.length && <button className="load-more" onClick={() => setVisible((count) => count + 18)}>SHOW 18 MORE DOCUMENTS</button>}
+            {results.length === 0 && <div className="empty-state"><strong>NO EXACT MATCH</strong><p>Try a broader term or return to All collections.</p><button onClick={() => { setQuery(""); setCategory("All"); }}>CLEAR SEARCH AND FILTERS</button></div>}
+            {visible < results.length && <button className="load-more" onClick={() => setVisible((count) => count + 12)}>SHOW 12 MORE SOURCES</button>}
           </section>
 
-          <section className="manual-section" id="terms">
-            <div className="section-heading"><div><p className="section-kicker">04 / KEY TERMS & MODELS</p><h2>THE LANGUAGE THAT HOLDS IT TOGETHER</h2></div><p>These recurring ideas connect strategy, diagnosis, build discipline, governance, and learning.</p></div>
-            <div className="term-grid">{terms.map(([name, definition], index) => <article key={name}><span>{String(index + 1).padStart(2, "0")}</span><h3>{name}</h3><p>{definition}</p></article>)}</div>
-          </section>
-
-          <section className="manual-section next-section" id="next">
-            <div className="section-heading"><div><p className="section-kicker">05 / WHERE TO START</p><h2>CHOOSE THE NEXT USEFUL MOVE</h2></div><p>You do not need to read the folder in order. Start with the decision you are responsible for.</p></div>
-            <div className="journey-grid">
-              <a href="#academy" onClick={() => chooseAudience("Employees")}><span>EMPLOYEE</span><strong>Build a safe foundation</strong><p>Start with AI Readiness, then choose IGNITE or the Two-Day Workshop.</p></a>
-              <a href="#academy" onClick={() => chooseAudience("Managers")}><span>MANAGER</span><strong>Guide adoption without guessing</strong><p>Take Manager Orientation, then use Work Redesign for a real workflow.</p></a>
-              <a href="#academy" onClick={() => chooseAudience("Leaders")}><span>LEADER</span><strong>Fund and govern what matters</strong><p>Use QUEST, the Golden Stake, and the ITW Way to shape the portfolio.</p></a>
-              <a href="#academy" onClick={() => chooseAudience("Builders")}><span>BUILDER</span><strong>Build proof with boundaries</strong><p>Start with the System Map, Build Type Profiles, orchestration, and memory readiness.</p></a>
+          <section className="manual-section terms-section" id="terms">
+            <div className="section-heading">
+              <div><p className="section-kicker">07 / WORKING LANGUAGE</p><h2>SIX TERMS USED THROUGHOUT THE STRATEGY</h2></div>
+              <p>Memorable names only help when they make an operating decision easier. These definitions are the plain-language meaning used in this work.</p>
             </div>
-            <div className="source-folder"><div><p className="detail-label">SOURCE OF TRUTH</p><h3>The dashboard explains the system. The Drive folder preserves the working evidence.</h3></div><a className="button button-blue" href="https://drive.google.com/drive/folders/1BHQfGMPw2C-AcBLaSQJleia8UGD4hhO9" target="_blank" rel="noreferrer">OPEN THE SOURCE FOLDER →</a></div>
+            <div className="term-grid">{terms.map(([name, definition], index) => <article key={name}><span>{String(index + 1).padStart(2, "0")}</span><h3>{name}</h3><p>{definition}</p></article>)}</div>
+            <div className="source-folder"><div><p className="detail-label">WORKING EVIDENCE BASE</p><h3>The dashboard is the curated guide. The Drive folder preserves the source material, prior versions, and working evidence.</h3></div><a className="button button-blue" href="https://drive.google.com/drive/folders/1BHQfGMPw2C-AcBLaSQJleia8UGD4hhO9" target="_blank" rel="noreferrer">OPEN THE SOURCE FOLDER →</a></div>
           </section>
         </div>
       </div>

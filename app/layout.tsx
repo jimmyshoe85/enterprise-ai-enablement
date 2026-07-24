@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = headerStore.get("x-forwarded-host") || headerStore.get("host") || "localhost:3000";
   const protocol = headerStore.get("x-forwarded-proto") || (host.includes("localhost") ? "http" : "https");
   const origin = protocol + "://" + host;
-  const description = "A practical field manual for understanding the enterprise AI strategy, choosing an Academy path, and finding the right source material.";
+  const description = "A working enterprise strategy for finding, proving, governing, and scaling AI value at Miller.";
 
   return {
     title: "Enterprise AI Enablement | Miller",
@@ -17,13 +17,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Enterprise AI Enablement",
       description,
       type: "website",
-      images: [{ url: origin + "/og.png", width: 1672, height: 943, alt: "Enterprise AI Enablement field manual" }],
+      images: [{ url: origin + "/og-v2.png", width: 1672, height: 943, alt: "Enterprise AI Enablement working enterprise strategy" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Enterprise AI Enablement",
       description,
-      images: [origin + "/og.png"],
+      images: [origin + "/og-v2.png"],
     },
   };
 }
