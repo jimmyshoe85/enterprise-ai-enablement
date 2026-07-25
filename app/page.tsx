@@ -62,7 +62,7 @@ const academy: Record<string, Course[]> = {
   Employees: [
     {
       id: "readiness",
-      title: "AI Readiness",
+      title: "Build AI Readiness",
       subtitle: "Build a safe, practical starting point.",
       for: "Employees with no prior AI experience",
       format: "One day",
@@ -73,18 +73,18 @@ const academy: Record<string, Course[]> = {
     },
     {
       id: "ignite",
-      title: "IGNITE",
+      title: "Experiment and Build with AI",
       subtitle: "Take a day to experiment, build, and learn.",
       for: "Any employee who wants hands-on experience",
       format: "One-day immersive workshop",
-      description: "An open, hands-on day for experimenting with AI. You do not need an idea, a business problem, or prior coding experience. Learn by building automations, reports, reusable skills, and workflows that connect to public MCPs. Everyone leaves with access to Codex or Anthropic Enterprise so the learning can continue with their teams.",
+      description: "The IGNITE experience is an open, hands-on day for experimenting with AI. You do not need an idea, a business problem, or prior coding experience. Learn by building automations, reports, reusable skills, and workflows that connect to public MCPs. Everyone leaves with access to Codex or Anthropic Enterprise so the learning can continue with their teams.",
       outcomes: ["Build automations and reports through guided experimentation", "Create reusable skills and connect to public MCPs", "Keep building and collaborating with enterprise AI tools"],
       artifact: "Codex or Anthropic Enterprise access and a starter build portfolio",
       source: "IGNITE Workshop OneDay",
     },
     {
       id: "two-day",
-      title: "Two-Day AI Workshop",
+      title: "Shape an AI Opportunity",
       subtitle: "Move from first contact to a Golden Stake project.",
       for: "Curious employees",
       format: "Two days",
@@ -95,7 +95,7 @@ const academy: Record<string, Course[]> = {
     },
     {
       id: "redesign",
-      title: "Work Redesign",
+      title: "Redesign Work Responsibly",
       subtitle: "Redesign the work without breaking what makes it good.",
       for: "Practitioners, process owners, and enablement leads",
       format: "Two-day intensive",
@@ -108,7 +108,7 @@ const academy: Record<string, Course[]> = {
   Managers: [
     {
       id: "manager",
-      title: "Manager Orientation",
+      title: "Lead AI Adoption",
       subtitle: "Know what good looks like once the train is moving.",
       for: "People managers",
       format: "90-minute virtual session",
@@ -119,7 +119,7 @@ const academy: Record<string, Course[]> = {
     },
     {
       id: "manager-redesign",
-      title: "Work Redesign",
+      title: "Guide Work Redesign",
       subtitle: "See the work your process map misses.",
       for: "Managers and process owners",
       format: "Two-day intensive",
@@ -132,8 +132,8 @@ const academy: Record<string, Course[]> = {
   Leaders: [
     {
       id: "heroes",
-      title: "Heroes & Duct Tape",
-      subtitle: "See the real work before automating it.",
+      title: "See the Work Before You Automate",
+      subtitle: "Use the Heroes & Duct Tape lens to reveal the work the process map misses.",
       for: "Enterprise and functional leaders",
       format: "45-minute keynote",
       description: "Why AI pilots fail when they automate the fictional process instead of the invisible labor that actually holds the operation together.",
@@ -143,8 +143,8 @@ const academy: Record<string, Course[]> = {
     },
     {
       id: "quest",
-      title: "QUEST",
-      subtitle: "Five questions for finding enterprise AI value.",
+      title: "Find Enterprise AI Value",
+      subtitle: "Use QUEST: five questions for finding where value really lives.",
       for: "Leadership teams",
       format: "45-minute keynote",
       description: "A technology-independent framework for finding where human and machine value live—in the queue, edges, systems, and agency around the model.",
@@ -154,8 +154,8 @@ const academy: Record<string, Course[]> = {
     },
     {
       id: "stake",
-      title: "The Golden Stake",
-      subtitle: "A legitimacy test before money or time gets spent.",
+      title: "Choose AI Investments",
+      subtitle: "Use the Golden Stake test before money or time gets spent.",
       for: "Sponsors, Finance, IT, and Legal",
       format: "45-minute keynote",
       description: "A four-part filter for deciding whether an AI initiative deserves to exist: baseline, claim, boundary, and a reason to stop.",
@@ -165,7 +165,7 @@ const academy: Record<string, Course[]> = {
     },
     {
       id: "home",
-      title: "The ITW Way / Home Ground",
+      title: "Set AI Strategy the ITW Way",
       subtitle: "Build strategy in the language of the business.",
       for: "Business and platform leaders",
       format: "45-minute keynote",
@@ -178,7 +178,7 @@ const academy: Record<string, Course[]> = {
   Builders: [
     {
       id: "agent",
-      title: "Build & Deploy Your First Agent",
+      title: "Design and Deploy Bounded AI Agents",
       subtitle: "Choose the simplest system that can do the job.",
       for: "Employees with a real workflow to bring",
       format: "Full-day sandbox build",
@@ -189,7 +189,7 @@ const academy: Record<string, Course[]> = {
     },
     {
       id: "work",
-      title: "Enterprise Automation with ChatGPT Work",
+      title: "Build Enterprise Automations",
       subtitle: "Build reusable workspaces, skills, and dashboards.",
       for: "Training managers, analysts, and operations leaders",
       format: "Operational syllabus",
