@@ -7,46 +7,40 @@ import { academySummaries } from "./academy/catalog";
 const pillars = [
   {
     n: "01",
-    name: "Establish Value",
-    question: "What business result would make this worth doing?",
-    summary: "Begin with a real operating problem, a baseline, a falsifiable claim, clear boundaries, and a reason to stop. The burden of proof belongs to the AI effort—not to the business asked to adopt it.",
-    output: "A legitimate opportunity with a measurable value test.",
-    sources: ["QUEST", "The Golden Stake", "AI Cost to Serve", "Enterprise AI System Map"],
+    name: "Build Workforce Capability",
+    question: "Can people use AI effectively and responsibly?",
+    summary: "Give employees practical learning, approved tools, clear policy, and the confidence to build. Capability is the foundation of the strategy—not the final change-management step.",
+    output: "A workforce that can learn, build, and exercise judgment.",
   },
   {
     n: "02",
-    name: "Understand the Work",
-    question: "What actually happens beneath the process map?",
-    summary: "Observe the work as people perform it. Surface the judgment, exceptions, relationships, workarounds, and craft that formal process documents routinely miss.",
-    output: "A grounded decision about what to automate, support, or protect.",
-    sources: ["Engagement Playbook", "Hidden Work Interview Guide", "AI Readiness Scoring Rubric"],
+    name: "Keep Ownership Close to the Work",
+    question: "Can the business solve problems where they are best understood?",
+    summary: "Individuals and business units own their work, ideas, and solutions. Enterprise AI Enablement provides the ecosystem and support without taking ownership away from the people accountable for the result.",
+    output: "Useful solutions owned by the people closest to the value.",
   },
   {
     n: "03",
-    name: "Make Work Legible",
-    question: "Are context, sources, permissions, and handoffs ready?",
-    summary: "Connect intent, context, source authority, user authority, output format, and the next handoff before asking a model to act. Missing infrastructure becomes visible before it becomes operational risk.",
-    output: "A readiness diagnosis and a map of what must be fixed first.",
-    sources: ["Operational Diagnostic", "Work Beneath the Workflow", "Executive Reporting Framework"],
+    name: "Make Responsible Action Easier",
+    question: "Can someone get help without navigating the organization alone?",
+    summary: "Create one clear front door for tools, policy, IT, Legal, and build support. Begin with how an idea can move responsibly; increase review when reach, data, systems, or consequence increase.",
+    output: "A responsible path forward instead of a reflexive no.",
   },
   {
     n: "04",
-    name: "Build Bounded Proof",
-    question: "How do we prove value without losing control?",
-    summary: "Use Think, Build, Check. Set authority levels, source rules, tool contracts, memory boundaries, approvals, evaluation, observability, and escalation before increasing autonomy.",
-    output: "A bounded system that can be tested, operated, and audited.",
-    sources: ["Build Type Profiles", "Agent Project Playbook", "Memory Architecture"],
+    name: "Learn From the Business",
+    question: "What are people across the organization trying to improve?",
+    summary: "Employee experiments, business-unit priorities, executive initiatives, and outside ideas all create signals. Listening across the business reveals repeated needs and opportunities no central plan could see on its own.",
+    output: "A bottom-up view of emerging needs and enterprise opportunity.",
   },
   {
     n: "05",
-    name: "Scale Capability",
-    question: "What deserves to scale—and who must be ready?",
-    summary: "Translate evidence into the language leaders, IT, Legal, managers, and employees need. Fund the few workflows that matter, govern the risk, and build capability through the AI Academy.",
-    output: "A defensible investment, operating model, and adoption path.",
-    sources: ["Enterprise Policy", "Leadership Platform", "AI Academy", "ITW Way"],
+    name: "Grow Shared Value",
+    question: "Where can shared support create broader value?",
+    summary: "A useful solution can stay personal, help a team, or remain inside a business unit. When the same need appears across the organization, provide shared support and invest selectively using 80/20 discipline.",
+    output: "The right support at the right level—without forcing every idea to scale.",
   },
 ];
-
 const academy = academySummaries;
 
 const terms = [
@@ -59,10 +53,10 @@ const terms = [
 ];
 
 const operatingMoves = [
-  { n: "01", verb: "SELECT", title: "Choose work worth proving", description: "Use QUEST and the Golden Stake to name a valuable workflow, its owner, its baseline, its boundary, and the evidence that would justify continuing.", output: "A legitimate opportunity—not a technology demo." },
-  { n: "02", verb: "OBSERVE", title: "Understand the work as it is", description: "Interview the people closest to the work. Map judgment, exceptions, systems, handoffs, and the craft that keeps the operation running.", output: "An automate, support, or protect decision." },
-  { n: "03", verb: "PROVE", title: "Build the smallest bounded system", description: "Match the build type to the job. Define authority, sources, memory, tools, tests, approvals, and escalation before increasing autonomy.", output: "A working proof with evidence and guardrails." },
-  { n: "04", verb: "DECIDE", title: "Scale only what earns it", description: "Review the result with business, IT, Legal, and the people doing the work. Standardize what survives and build adoption through the Academy.", output: "A governed capability with an accountable owner." },
+  { n: "01", verb: "LEARN", title: "Build confidence and know the ecosystem", description: "Use the Academy to understand the tools, policy, responsibilities, and support available. People should know how to begin without guessing.", output: "Employees ready to use AI effectively and responsibly." },
+  { n: "02", verb: "BUILD", title: "Solve work where you see value", description: "Individuals, teams, and business units build at the level that fits the need. Not every useful solution must become an enterprise project.", output: "Useful local solutions with clear ownership." },
+  { n: "03", verb: "SUPPORT", title: "Bring in help as consequence grows", description: "AI Enablement helps navigate tools, IT, Legal, policy, and approved platforms. Enterprise applications, sensitive information, and consequential actions receive greater scrutiny.", output: "A responsible way forward—not a reflexive no." },
+  { n: "04", verb: "SHARE", title: "Grow what can help others", description: "When the same need appears across teams or business units, treat it as a signal. Provide shared support or broader investment when the value justifies it.", output: "Shared value without centralizing ownership." },
 ];
 
 const essentialAssets = [
@@ -143,8 +137,8 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">A WORKING ENTERPRISE STRATEGY FOR MILLER</p>
           <h1>ENTERPRISE AI<br />ENABLEMENT</h1>
-          <p className="hero-thesis">A system for finding, proving, governing, and scaling AI value—without losing the judgment and craft that make the work good.</p>
-          <p className="hero-promise">See the strategy. <strong>Understand what is ready.</strong> Choose the next move.</p>
+          <p className="hero-thesis">Enterprise AI Enablement gives people the skills, tools, and support to use AI responsibly, improve their work, and move good ideas forward.</p>
+          <p className="hero-promise">Build capability. <strong>Keep ownership close to the work.</strong> Make responsible action easier.</p>
         </div>
         <div className="hero-orientation">
           <div>
@@ -152,8 +146,8 @@ export default function Home() {
             <p className="hero-panel-label">WHAT IS READY NOW</p>
             <h2>THE STRUCTURE<br />EXISTS</h2>
             <ul className="ready-list">
-              <li><strong>05</strong><span>strategic moves from value to scale</span></li>
-              <li><strong>04</strong><span>steps from opportunity to governed proof</span></li>
+              <li><strong>05</strong><span>commitments for enterprise enablement</span></li>
+              <li><strong>04</strong><span>ways people move from learning to shared value</span></li>
               <li><strong>03</strong><span>Academy audiences with practical outcomes</span></li>
               <li><strong>{documents.length}</strong><span>working sources, tools, and research records</span></li>
             </ul>
@@ -164,8 +158,8 @@ export default function Home() {
 
       <section className="orientation" aria-label="Start here">
         <div className="orientation-title"><strong>START HERE</strong><span>The shortest path through the work</span></div>
-        <a href="#strategy"><b>01</b><span><strong>SEE THE DIRECTION</strong>Five moves from value to scale</span></a>
-        <a href="#operating"><b>02</b><span><strong>SEE THE PLAN</strong>Four steps from selection to adoption</span></a>
+        <a href="#strategy"><b>01</b><span><strong>SEE THE DIRECTION</strong>Five commitments for enterprise enablement</span></a>
+        <a href="#operating"><b>02</b><span><strong>SEE THE PLAN</strong>Learn, build, get support, share what works</span></a>
         <a href="#next"><b>03</b><span><strong>FIND YOUR ENTRY</strong>Choose the responsibility closest to yours</span></a>
       </section>
 
@@ -181,7 +175,7 @@ export default function Home() {
             <a href="#library"><span>06</span>Full evidence index</a>
             <a href="#terms"><span>07</span>Working language</a>
           </nav>
-          <div className="index-stat"><strong>05</strong><span>strategy moves</span></div>
+          <div className="index-stat"><strong>05</strong><span>strategy commitments</span></div>
           <div className="index-stat"><strong>03</strong><span>Academy audiences</span></div>
           <div className="index-stat"><strong>{documents.length}</strong><span>working sources</span></div>
         </aside>
@@ -189,28 +183,28 @@ export default function Home() {
         <div className="manual-content">
           <section className="manual-section strategy-section" id="strategy">
             <div className="section-heading">
-              <div><p className="section-kicker">01 / ENTERPRISE STRATEGY</p><h2>FIVE MOVES FROM VALUE TO SCALE</h2></div>
-              <p>The strategy begins with business value and real work—not a model. Each move produces the evidence and operating conditions required for the next.</p>
+              <div><p className="section-kicker">01 / ENTERPRISE STRATEGY</p><h2>FIVE COMMITMENTS FOR ENTERPRISE AI ENABLEMENT</h2></div>
+              <p>Build capability across the workforce, keep ownership close to the work, and make it easier for good ideas to move responsibly. These commitments work together; they are not gates people must pass.</p>
             </div>
             <div className="pillar-grid">
               {pillars.map((item, index) => <button key={item.n} className={pillar === index ? "pillar active" : "pillar"} onClick={() => setPillar(index)} aria-pressed={pillar === index}><span className="pillar-number">{item.n}</span><strong>{item.name}</strong><small>{item.question}</small></button>)}
             </div>
             <div className="pillar-detail" aria-live="polite">
               <div><p className="detail-label">{pillars[pillar].n} / THE STRATEGIC QUESTION</p><h3>{pillars[pillar].question}</h3><p>{pillars[pillar].summary}</p></div>
-              <div className="detail-outcome"><span>THE OUTPUT</span><strong>{pillars[pillar].output}</strong><ul>{pillars[pillar].sources.map((item) => <li key={item}>{item}</li>)}</ul></div>
+              <div className="detail-outcome"><span>WHAT THIS CREATES</span><strong>{pillars[pillar].output}</strong></div>
             </div>
-            <div className="craft-current"><span>NON-NEGOTIABLE PRINCIPLE</span><strong>Protect expertise, judgment, and accountability at every stage.</strong><p>Human impact is not a final change-management step. It shapes what deserves to be built, how authority is assigned, and what must remain human-owned.</p></div>
+            <div className="craft-current"><span>NON-NEGOTIABLE PRINCIPLE</span><strong>Start with how it can work responsibly.</strong><p>Governance helps people act with confidence. Additional review follows consequence—not curiosity.</p></div>
           </section>
 
           <section className="manual-section operating-section" id="operating">
             <div className="section-heading">
-              <div><p className="section-kicker">02 / OPERATING PLAN</p><h2>FROM OPPORTUNITY TO GOVERNED PROOF</h2></div>
-              <p>This is how the strategy moves. Each step has a decision, a practical method, and an output that earns the right to continue.</p>
+              <div><p className="section-kicker">02 / OPERATING PLAN</p><h2>FROM LEARNING TO SHARED VALUE</h2></div>
+              <p>People can enter from different places. This is a simple way to understand how learning, local action, support, and shared value connect—not a sequence of gates.</p>
             </div>
             <div className="operating-grid">
               {operatingMoves.map((move) => <article className="operating-move" key={move.n}><div className="move-head"><span>{move.n}</span><b>{move.verb}</b></div><h3>{move.title}</h3><p>{move.description}</p><div className="move-output"><small>OUTPUT</small><strong>{move.output}</strong></div></article>)}
             </div>
-            <div className="next-decision"><div><p className="detail-label">THE FIRST ENTERPRISE MOVE</p><h3>Choose one or two workflows worth proving—not a portfolio of disconnected pilots.</h3></div><p>Give each workflow a business owner, baseline, claim, boundary, and stop condition. Then observe the work before choosing the technology.</p></div>
+            <div className="next-decision"><div><p className="detail-label">THE ENABLEMENT POSTURE</p><h3>Make it easier for people to learn, build, and get responsible help.</h3></div><p>Useful work can remain personal, support a team, or stay inside a business unit. When the same need appears across the organization, that is a signal for shared support.</p></div>
           </section>
 
           <section className="manual-section next-section" id="next">
@@ -220,9 +214,9 @@ export default function Home() {
             </div>
             <div className="journey-grid">
               <a href="#academy" onClick={() => chooseAudience("Employees")}><span>EMPLOYEE</span><strong>Learn by experimenting</strong><p>Start without an idea or prior experience. Build practical things, explore safely, and learn what becomes possible.</p></a>
-              <a href="#academy" onClick={() => chooseAudience("Managers")}><span>MANAGER</span><strong>Guide adoption with evidence</strong><p>Help teams choose good work, ask better questions, and protect the expertise the process depends on.</p></a>
-              <a href="#academy" onClick={() => chooseAudience("Leaders")}><span>LEADER</span><strong>Fund and govern what matters</strong><p>Use QUEST and the Golden Stake to choose where the enterprise should invest—and where it should stop.</p></a>
-              <a href="/academy"><span>BUILDER</span><strong>Build responsible solutions</strong><p>Learn the ecosystem, choose the right level of support, and build with clear ownership and boundaries.</p></a>
+              <a href="#academy" onClick={() => chooseAudience("Managers")}><span>MANAGER</span><strong>Help the team move</strong><p>Support responsible experimentation, prevent pilot graveyards, and lead adoption and work redesign.</p></a>
+              <a href="#academy" onClick={() => chooseAudience("Leaders")}><span>LEADER</span><strong>Recognize patterns and invest</strong><p>Learn from needs across the business and provide shared support where broader value appears.</p></a>
+              <a href="/academy"><span>BUILDER</span><strong>Build responsible solutions</strong><p>Use the ecosystem, keep ownership clear, and bring in support as reach or consequence grows.</p></a>
             </div>
           </section>
 
