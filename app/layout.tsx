@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = headerStore.get("x-forwarded-host") || headerStore.get("host") || "localhost:3000";
   const protocol = headerStore.get("x-forwarded-proto") || (host.includes("localhost") ? "http" : "https");
   const origin = protocol + "://" + host;
-  const description = "A working enterprise strategy for finding, proving, governing, and scaling AI value at Miller.";
+  const description = "Building AI capability across Miller so people can learn, improve work, and move good ideas forward responsibly.";
 
   return {
     title: "Enterprise AI Enablement | Miller",

@@ -2,6 +2,7 @@
 
 import { FormEvent, useMemo, useState } from "react";
 import { documents } from "./data";
+import { academySummaries } from "./academy/catalog";
 
 const pillars = [
   {
@@ -46,160 +47,7 @@ const pillars = [
   },
 ];
 
-type Course = {
-  id: string;
-  title: string;
-  subtitle: string;
-  for: string;
-  format: string;
-  description: string;
-  outcomes: string[];
-  artifact: string;
-  source: string;
-};
-
-const academy: Record<string, Course[]> = {
-  Employees: [
-    {
-      id: "readiness",
-      title: "Build AI Readiness",
-      subtitle: "Build a safe, practical starting point.",
-      for: "Employees with no prior AI experience",
-      format: "One day",
-      description: "A plain-English foundation in what AI is, where it is safe to use, how to prompt, and how to choose an appropriate first task.",
-      outcomes: ["Explain the five foundational layers", "Use the 2×2 Task Map", "Know when human judgment must stay in control"],
-      artifact: "Personal AI readiness map",
-      source: "AI Readiness One Day Workshop",
-    },
-    {
-      id: "ignite",
-      title: "Experiment and Build with AI",
-      subtitle: "Take a day to experiment, build, and learn.",
-      for: "Any employee who wants hands-on experience",
-      format: "One-day immersive workshop",
-      description: "The IGNITE experience is an open, hands-on day for experimenting with AI. You do not need an idea, a business problem, or prior coding experience. Learn by building automations, reports, reusable skills, and workflows that connect to public MCPs. Everyone leaves with access to Codex or Anthropic Enterprise so the learning can continue with their teams.",
-      outcomes: ["Build automations and reports through guided experimentation", "Create reusable skills and connect to public MCPs", "Keep building and collaborating with enterprise AI tools"],
-      artifact: "Codex or Anthropic Enterprise access and a starter build portfolio",
-      source: "IGNITE Workshop OneDay",
-    },
-    {
-      id: "two-day",
-      title: "Shape an AI Opportunity",
-      subtitle: "Move from first contact to a Golden Stake project.",
-      for: "Curious employees",
-      format: "Two days",
-      description: "A hands-on event connecting real work, safe experimentation, project legitimacy, and review by Legal, IT, and AI Enablement.",
-      outcomes: ["Understand three levels of AI work", "Find hidden work in a workflow", "Present a bounded project worth building"],
-      artifact: "Golden Stake project proposal",
-      source: "AI Workshop TwoDay",
-    },
-    {
-      id: "redesign",
-      title: "Redesign Work Responsibly",
-      subtitle: "Redesign the work without breaking what makes it good.",
-      for: "Practitioners, process owners, and enablement leads",
-      format: "Two-day intensive",
-      description: "Learn to read work as it really happens and decide, task by task, what should be automated, supported, or protected.",
-      outcomes: ["Surface hidden judgment", "Map systems and handoffs", "Protect the craft worth keeping"],
-      artifact: "Work redesign toolkit",
-      source: "Work Redesign Toolkit Intensive",
-    },
-  ],
-  Managers: [
-    {
-      id: "manager",
-      title: "Lead AI Adoption",
-      subtitle: "Know what good looks like once the train is moving.",
-      for: "People managers",
-      format: "90-minute virtual session",
-      description: "Clarifies the manager’s role in safe adoption, task selection, team questions, and the boundary between AI support and human ownership.",
-      outcomes: ["Explain the sandbox", "Identify strong and weak AI candidates", "Answer safe-use questions"],
-      artifact: "One-page manager brief",
-      source: "Manager AI Orientation",
-    },
-    {
-      id: "manager-redesign",
-      title: "Guide Work Redesign",
-      subtitle: "See the work your process map misses.",
-      for: "Managers and process owners",
-      format: "Two-day intensive",
-      description: "A deeper practice for observing hidden work and making responsible task-level redesign decisions with employees.",
-      outcomes: ["Interview without leading", "Separate task from craft", "Create an automate/support/protect map"],
-      artifact: "Field-tested redesign map",
-      source: "Work Redesign Toolkit Intensive",
-    },
-  ],
-  Leaders: [
-    {
-      id: "heroes",
-      title: "See the Work Before You Automate",
-      subtitle: "Use the Heroes & Duct Tape lens to reveal the work the process map misses.",
-      for: "Enterprise and functional leaders",
-      format: "45-minute keynote",
-      description: "Why AI pilots fail when they automate the fictional process instead of the invisible labor that actually holds the operation together.",
-      outcomes: ["Recognize invisible labor", "Ask better observation questions", "Protect operational knowledge"],
-      artifact: "Operational-reality lens",
-      source: "Heroes and Duct Tape Keynote Outline",
-    },
-    {
-      id: "quest",
-      title: "Find Enterprise AI Value",
-      subtitle: "Use QUEST: five questions for finding where value really lives.",
-      for: "Leadership teams",
-      format: "45-minute keynote",
-      description: "A technology-independent framework for finding where human and machine value live—in the queue, edges, systems, and agency around the model.",
-      outcomes: ["Shift focus beyond the model", "Locate the real constraint", "Frame an enterprise opportunity"],
-      artifact: "QUEST decision framework",
-      source: "QUEST Keynote Outline",
-    },
-    {
-      id: "stake",
-      title: "Choose AI Investments",
-      subtitle: "Use the Golden Stake test before money or time gets spent.",
-      for: "Sponsors, Finance, IT, and Legal",
-      format: "45-minute keynote",
-      description: "A four-part filter for deciding whether an AI initiative deserves to exist: baseline, claim, boundary, and a reason to stop.",
-      outcomes: ["Set a baseline", "Define a falsifiable claim", "Agree on boundaries and stop conditions"],
-      artifact: "Golden Stake project test",
-      source: "The Golden Stake Keynote Outline",
-    },
-    {
-      id: "home",
-      title: "Set AI Strategy the ITW Way",
-      subtitle: "Build strategy in the language of the business.",
-      for: "Business and platform leaders",
-      format: "45-minute keynote",
-      description: "Connects AI strategy to CBI, 80/20, decentralization, local proof, and respect for the craft that gives the business its authority.",
-      outcomes: ["Use internal-customer signals", "Apply 80/20 to AI investment", "Balance local action with enterprise guardrails"],
-      artifact: "Enterprise strategy lens",
-      source: "Home Ground Keynote Outline",
-    },
-  ],
-  Builders: [
-    {
-      id: "agent",
-      title: "Design and Deploy Bounded AI Agents",
-      subtitle: "Choose the simplest system that can do the job.",
-      for: "Employees with a real workflow to bring",
-      format: "Full-day sandbox build",
-      description: "Stress-test whether the task needs an agent, set an appropriate autonomy level, and deploy a working bounded agent.",
-      outcomes: ["Use the agent decision ladder", "Set authority from L0 to L6", "Deploy and test a working agent"],
-      artifact: "Sandbox agent and build record",
-      source: "Building Deploying Your First Agent",
-    },
-    {
-      id: "work",
-      title: "Build Enterprise Automations",
-      subtitle: "Build reusable workspaces, skills, and dashboards.",
-      for: "Training managers, analysts, and operations leaders",
-      format: "Operational syllabus",
-      description: "A structured program in secure local workspaces, matching compute to budgets, packaging recurring workflows, and producing interactive outputs.",
-      outcomes: ["Configure a secure workspace", "Package a repeatable skill", "Create an operational dashboard"],
-      artifact: "Reusable automation blueprint",
-      source: "Executive Training Syllabus V2",
-    },
-  ],
-};
+const academy = academySummaries;
 
 const terms = [
   ["Golden Stake", "A four-part legitimacy test: baseline, claim, boundary, and the condition that makes a project not worth continuing."],
@@ -244,10 +92,6 @@ const displayTitle = (title: string) => title
 const displayStatus = (status: string) => status === "Current" ? "Working" : status;
 const categories = ["All", "Strategy & Value", "Work & Readiness", "Build & Operate", "Academy & Adoption", "Research & Archive"];
 
-function sourceUrl(title: string) {
-  const value = title.toLowerCase();
-  return documents.find((doc) => doc.title.toLowerCase().includes(value))?.url || "#library";
-}
 
 export default function Home() {
   const [pillar, setPillar] = useState(0);
@@ -285,7 +129,7 @@ export default function Home() {
           <span className="brand-copy"><img className="brand-logo" src="/miller-logo-white.png" alt="Miller" /><small>ENTERPRISE AI ENABLEMENT</small></span>
         </a>
         <nav className="topnav" aria-label="Primary navigation">
-          <a href="#strategy">Strategy</a><a href="#operating">Operating plan</a><a href="#academy">AI Academy</a><a href="#evidence">Evidence</a>
+          <a href="#strategy">Strategy</a><a href="#operating">Operating plan</a><a href="/academy">AI Academy</a><a href="#evidence">Evidence</a>
         </nav>
         <form className="header-search" onSubmit={submitSearch}>
           <label className="sr-only" htmlFor="header-search">Search 117 working sources</label>
@@ -310,7 +154,7 @@ export default function Home() {
             <ul className="ready-list">
               <li><strong>05</strong><span>strategic moves from value to scale</span></li>
               <li><strong>04</strong><span>steps from opportunity to governed proof</span></li>
-              <li><strong>04</strong><span>Academy audiences with practical outcomes</span></li>
+              <li><strong>03</strong><span>Academy audiences with practical outcomes</span></li>
               <li><strong>{documents.length}</strong><span>working sources, tools, and research records</span></li>
             </ul>
             <a className="button button-light" href="#strategy">SEE THE STRATEGY →</a>
@@ -338,7 +182,7 @@ export default function Home() {
             <a href="#terms"><span>07</span>Working language</a>
           </nav>
           <div className="index-stat"><strong>05</strong><span>strategy moves</span></div>
-          <div className="index-stat"><strong>04</strong><span>Academy audiences</span></div>
+          <div className="index-stat"><strong>03</strong><span>Academy audiences</span></div>
           <div className="index-stat"><strong>{documents.length}</strong><span>working sources</span></div>
         </aside>
 
@@ -378,14 +222,14 @@ export default function Home() {
               <a href="#academy" onClick={() => chooseAudience("Employees")}><span>EMPLOYEE</span><strong>Learn by experimenting</strong><p>Start without an idea or prior experience. Build practical things, explore safely, and learn what becomes possible.</p></a>
               <a href="#academy" onClick={() => chooseAudience("Managers")}><span>MANAGER</span><strong>Guide adoption with evidence</strong><p>Help teams choose good work, ask better questions, and protect the expertise the process depends on.</p></a>
               <a href="#academy" onClick={() => chooseAudience("Leaders")}><span>LEADER</span><strong>Fund and govern what matters</strong><p>Use QUEST and the Golden Stake to choose where the enterprise should invest—and where it should stop.</p></a>
-              <a href="#academy" onClick={() => chooseAudience("Builders")}><span>BUILDER</span><strong>Build proof with boundaries</strong><p>Match the system to the job, set authority, and make the result testable, observable, and auditable.</p></a>
+              <a href="/academy"><span>BUILDER</span><strong>Build responsible solutions</strong><p>Learn the ecosystem, choose the right level of support, and build with clear ownership and boundaries.</p></a>
             </div>
           </section>
 
           <section className="manual-section academy-section" id="academy">
             <div className="section-heading">
               <div><p className="section-kicker">04 / MILLER AI ACADEMY</p><h2>TURN THE STRATEGY INTO CAPABILITY</h2></div>
-              <p>Choose the perspective closest to what you need to do. Employee offerings are open learning experiences; manager, leader, and builder offerings are selected by responsibility.</p>
+              <p>Choose the perspective closest to what you need to do. Employee offerings are open learning experiences; manager and leader offerings build the capability their responsibilities require.</p>
             </div>
             <div className="audience-tabs" role="tablist" aria-label="Academy audiences">
               {Object.keys(academy).map((name) => <button key={name} id={`tab-${name.toLowerCase()}`} className={audience === name ? "active" : ""} onClick={() => chooseAudience(name)} role="tab" aria-selected={audience === name} aria-controls="academy-panel" tabIndex={audience === name ? 0 : -1}>{name}</button>)}
@@ -395,9 +239,10 @@ export default function Home() {
               {courses.map((item, index) => <button key={item.id} className={course.id === item.id ? "course-step active" : "course-step"} onClick={() => setCourseId(item.id)} aria-pressed={course.id === item.id}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.title}</strong><small>{item.format}</small></button>)}
             </div>
             <article className="course-detail" id="academy-panel" role="tabpanel" aria-labelledby={`tab-${audience.toLowerCase()}`} aria-live="polite">
-              <div className="course-main"><p className="detail-label">{course.for} / {course.format}</p><h3>{course.title}</h3><h4>{course.subtitle}</h4><p>{course.description}</p><a className="text-link" href={sourceUrl(course.source)} target="_blank" rel="noreferrer">OPEN {course.title.toUpperCase()} SOURCE →</a></div>
-              <div className="course-outcomes"><span>WHAT YOU LEAVE ABLE TO DO</span><ul>{course.outcomes.map((item) => <li key={item}>{item}</li>)}</ul><div className="leave-behind"><small>LEAVE-BEHIND</small><strong>{course.artifact}</strong></div></div>
+              <div className="course-main"><p className="detail-label">{course.for} / {course.format}</p><h3>{course.title}</h3><h4>{course.subtitle}</h4><p>{course.description}</p><a className="text-link" href="/academy">EXPLORE THE FULL ACADEMY →</a></div>
+              <div className="course-outcomes"><span>WHAT YOU LEAVE ABLE TO DO</span><ul>{course.outcomes.map((item) => <li key={item}>{item}</li>)}</ul><div className="leave-behind"><small>LEAVE-BEHIND</small><strong>{course.leaveBehind}</strong></div></div>
             </article>
+            <a className="academy-full-link" href="/academy">EXPLORE ALL ACADEMY EXPERIENCES, AGENDAS, AND OUTCOMES →</a>
           </section>
 
           <section className="manual-section evidence-section" id="evidence">
