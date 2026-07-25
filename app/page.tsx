@@ -74,12 +74,12 @@ const academy: Record<string, Course[]> = {
     {
       id: "ignite",
       title: "IGNITE",
-      subtitle: "Turn what you know into something that builds.",
-      for: "Employees and subject-matter experts",
-      format: "One-day build intensive",
-      description: "Find one problem worth solving, build a working AI solution from real expertise, document it, and pressure-test it before anyone relies on it.",
-      outcomes: ["Choose a high-value problem", "Build without prior coding experience", "Document and stress-test the result"],
-      artifact: "Working solution and build record",
+      subtitle: "Take a day to experiment, build, and learn.",
+      for: "Any employee who wants hands-on experience",
+      format: "One-day immersive workshop",
+      description: "An open, hands-on day for experimenting with AI. You do not need an idea, a business problem, or prior coding experience. Learn by building automations, reports, reusable skills, and workflows that connect to public MCPs. Everyone leaves with access to Codex or Anthropic Enterprise so the learning can continue with their teams.",
+      outcomes: ["Build automations and reports through guided experimentation", "Create reusable skills and connect to public MCPs", "Keep building and collaborating with enterprise AI tools"],
+      artifact: "Codex or Anthropic Enterprise access and a starter build portfolio",
       source: "IGNITE Workshop OneDay",
     },
     {
@@ -375,7 +375,7 @@ export default function Home() {
               <p>You do not need to read the library in order. Start with the decision you are responsible for, then use the Academy and essential assets to move.</p>
             </div>
             <div className="journey-grid">
-              <a href="#academy" onClick={() => chooseAudience("Employees")}><span>EMPLOYEE</span><strong>Build a safe foundation</strong><p>Understand what AI can do, choose an appropriate first task, and keep judgment in control.</p></a>
+              <a href="#academy" onClick={() => chooseAudience("Employees")}><span>EMPLOYEE</span><strong>Learn by experimenting</strong><p>Start without an idea or prior experience. Build practical things, explore safely, and learn what becomes possible.</p></a>
               <a href="#academy" onClick={() => chooseAudience("Managers")}><span>MANAGER</span><strong>Guide adoption with evidence</strong><p>Help teams choose good work, ask better questions, and protect the expertise the process depends on.</p></a>
               <a href="#academy" onClick={() => chooseAudience("Leaders")}><span>LEADER</span><strong>Fund and govern what matters</strong><p>Use QUEST and the Golden Stake to choose where the enterprise should invest—and where it should stop.</p></a>
               <a href="#academy" onClick={() => chooseAudience("Builders")}><span>BUILDER</span><strong>Build proof with boundaries</strong><p>Match the system to the job, set authority, and make the result testable, observable, and auditable.</p></a>
@@ -385,12 +385,12 @@ export default function Home() {
           <section className="manual-section academy-section" id="academy">
             <div className="section-heading">
               <div><p className="section-kicker">04 / MILLER AI ACADEMY</p><h2>TURN THE STRATEGY INTO CAPABILITY</h2></div>
-              <p>Choose the perspective closest to what you need to do. Employee programs form a progression; manager, leader, and builder offerings are selected by responsibility.</p>
+              <p>Choose the perspective closest to what you need to do. Employee offerings are open learning experiences; manager, leader, and builder offerings are selected by responsibility.</p>
             </div>
             <div className="audience-tabs" role="tablist" aria-label="Academy audiences">
               {Object.keys(academy).map((name) => <button key={name} id={`tab-${name.toLowerCase()}`} className={audience === name ? "active" : ""} onClick={() => chooseAudience(name)} role="tab" aria-selected={audience === name} aria-controls="academy-panel" tabIndex={audience === name ? 0 : -1}>{name}</button>)}
             </div>
-            <div className="academy-context"><strong>{audience === "Employees" ? "RECOMMENDED LEARNING PATH" : `${audience.toUpperCase()} OFFERINGS`}</strong><span>{audience === "Employees" ? "Move from foundation to applied work redesign." : "Choose the offering that matches the decision in front of you."}</span></div>
+            <div className="academy-context"><strong>{audience === "Employees" ? "OPEN LEARNING EXPERIENCES" : `${audience.toUpperCase()} OFFERINGS`}</strong><span>{audience === "Employees" ? "Start with curiosity. No polished idea, business case, or prior coding experience is required." : "Choose the offering that matches the decision in front of you."}</span></div>
             <div className="academy-path">
               {courses.map((item, index) => <button key={item.id} className={course.id === item.id ? "course-step active" : "course-step"} onClick={() => setCourseId(item.id)} aria-pressed={course.id === item.id}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.title}</strong><small>{item.format}</small></button>)}
             </div>
