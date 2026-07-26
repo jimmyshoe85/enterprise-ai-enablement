@@ -38,6 +38,7 @@ export default function AcademyPage() {
         <nav className="topnav" aria-label="Academy navigation">
           <Link href="/">Overview</Link>
           <Link className="current" href="/academy">AI Academy</Link>
+          <Link href="/ecosystem">How it works</Link>
           <Link href="/#strategy">Strategy</Link>
           <Link href="/#library">Resources</Link>
         </nav>

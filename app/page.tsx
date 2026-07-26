@@ -123,7 +123,7 @@ export default function Home() {
           <span className="brand-copy"><img className="brand-logo" src="/miller-logo-white.png" alt="Miller" /><small>ENTERPRISE AI ENABLEMENT</small></span>
         </a>
         <nav className="topnav" aria-label="Primary navigation">
-          <a href="#strategy">Strategy</a><a href="#operating">Operating plan</a><a href="/academy">AI Academy</a><a href="#evidence">Evidence</a>
+          <a href="#strategy">Strategy</a><a href="#operating">Operating plan</a><a href="/ecosystem">How it works</a><a href="/academy">AI Academy</a><a href="#evidence">Evidence</a>
         </nav>
         <form className="header-search" onSubmit={submitSearch}>
           <label className="sr-only" htmlFor="header-search">Search 117 working sources</label>
@@ -148,7 +148,7 @@ export default function Home() {
         <div className="orientation-title"><strong>START HERE</strong><span>The shortest path through the work</span></div>
         <a href="#strategy"><b>01</b><span><strong>SEE THE DIRECTION</strong>Five commitments for enterprise enablement</span></a>
         <a href="#operating"><b>02</b><span><strong>SEE THE PLAN</strong>Learn, build, get support, share what works</span></a>
-        <a href="#next"><b>03</b><span><strong>FIND YOUR ENTRY</strong>Choose the responsibility closest to yours</span></a>
+        <a href="#next"><b>03</b><span><strong>FIND YOUR ENTRY</strong>Employee, manager, or leader</span></a>
       </section>
 
       <div className="manual-shell">
@@ -181,7 +181,7 @@ export default function Home() {
               <div><p className="detail-label">{pillars[pillar].n} / THE STRATEGIC QUESTION</p><h3>{pillars[pillar].question}</h3><p>{pillars[pillar].summary}</p></div>
               <div className="detail-outcome"><span>WHAT THIS CREATES</span><strong>{pillars[pillar].output}</strong></div>
             </div>
-            <div className="craft-current"><span>NON-NEGOTIABLE PRINCIPLE</span><strong>Start with how it can work responsibly.</strong><p>Governance helps people act with confidence. Additional review follows consequence—not curiosity.</p></div>
+            <div className="craft-current"><span>NON-NEGOTIABLE PRINCIPLE</span><strong>Start with how it can work responsibly.</strong><p>Governance helps people act with confidence. Additional review follows consequence—not curiosity.</p></div><a className="strategy-depth-link" href="/ecosystem">SEE HOW OWNERSHIP, SUPPORT, AND EVIDENCE WORK TOGETHER →</a>
           </section>
 
           <section className="manual-section operating-section" id="operating">
@@ -197,14 +197,13 @@ export default function Home() {
 
           <section className="manual-section next-section" id="next">
             <div className="section-heading">
-              <div><p className="section-kicker">03 / WHERE YOU FIT</p><h2>CHOOSE THE RESPONSIBILITY CLOSEST TO YOURS</h2></div>
-              <p>You do not need to read the library in order. Start with the decision you are responsible for, then use the Academy and essential assets to move.</p>
+              <div><p className="section-kicker">03 / WHERE YOU FIT</p><h2>START WITH YOUR RESPONSIBILITY</h2></div>
+              <p>Choose the perspective closest to your role. Employees learn and build; managers lead adoption and work redesign; leaders create the conditions for shared value.</p>
             </div>
             <div className="journey-grid">
-              <a href="#academy" onClick={() => chooseAudience("Employees")}><span>EMPLOYEE</span><strong>Learn by experimenting</strong><p>Start without an idea or prior experience. Build practical things, explore safely, and learn what becomes possible.</p></a>
+              <a href="#academy" onClick={() => chooseAudience("Employees")}><span>EMPLOYEE</span><strong>Learn, build, and apply</strong><p>Start with curiosity, build practical things in IGNITE, and continue into advanced applied work when you are ready.</p></a>
               <a href="#academy" onClick={() => chooseAudience("Managers")}><span>MANAGER</span><strong>Help the team move</strong><p>Support responsible experimentation, prevent pilot graveyards, and lead adoption and work redesign.</p></a>
               <a href="#academy" onClick={() => chooseAudience("Leaders")}><span>LEADER</span><strong>Recognize patterns and invest</strong><p>Learn from needs across the business and provide shared support where broader value appears.</p></a>
-              <a href="/academy"><span>BUILDER</span><strong>Build responsible solutions</strong><p>Use the ecosystem, keep ownership clear, and bring in support as reach or consequence grows.</p></a>
             </div>
           </section>
 

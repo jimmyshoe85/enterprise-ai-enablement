@@ -17,9 +17,9 @@ export type AcademyCourse = {
 
 export const audienceGuidance: Record<AcademyAudience, { label: string; title: string; description: string }> = {
   Employees: {
-    label: "LEARN AND BUILD",
-    title: "Start with curiosity",
-    description: "Choose the experience that matches how you want to learn. No polished idea, business case, or prior coding experience is required.",
+    label: "LEARN, BUILD, AND APPLY",
+    title: "Start with curiosity and keep building",
+    description: "Begin with readiness or IGNITE, then continue into applied building and work redesign when you are ready. No polished idea, business case, or prior coding experience is required.",
   },
   Managers: {
     label: "LEAD THE CHANGE",
