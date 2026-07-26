@@ -139,21 +139,9 @@ export default function Home() {
           <h1>ENTERPRISE AI<br />ENABLEMENT</h1>
           <p className="hero-thesis">Enterprise AI Enablement gives people the skills, tools, and support to use AI responsibly, improve their work, and move good ideas forward.</p>
           <p className="hero-promise">Build capability. <strong>Keep ownership close to the work.</strong> Make responsible action easier.</p>
+          <a className="hero-cta" href="#strategy">EXPLORE THE STRATEGY <span>→</span></a>
         </div>
-        <div className="hero-orientation">
-          <div>
-            <span className="white-rule" />
-            <p className="hero-panel-label">WHAT IS READY NOW</p>
-            <h2>THE STRUCTURE<br />EXISTS</h2>
-            <ul className="ready-list">
-              <li><strong>05</strong><span>commitments for enterprise enablement</span></li>
-              <li><strong>04</strong><span>ways people move from learning to shared value</span></li>
-              <li><strong>03</strong><span>Academy audiences with practical outcomes</span></li>
-              <li><strong>{documents.length}</strong><span>working sources, tools, and research records</span></li>
-            </ul>
-            <a className="button button-light" href="#strategy">SEE THE STRATEGY →</a>
-          </div>
-        </div>
+        <div className="hero-angle" aria-hidden="true"><span /><span /></div>
       </section>
 
       <section className="orientation" aria-label="Start here">
