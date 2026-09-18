@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import SiteHeader from "../site-header";
+import { FRONT_DOOR } from "../site";
 import "./academy.css";
 import { useMemo, useState } from "react";
-import { academyCourses, audienceGuidance, type AcademyAudience } from "./catalog";
+import { academyCourses, audienceGuidance, leaderSessions, type AcademyAudience } from "./catalog";
 
 const audiences: AcademyAudience[] = ["Employees", "Managers", "Leaders"];
 
@@ -28,23 +30,7 @@ export default function AcademyPage() {
 
   return (
     <div className="academy-page">
-      <header className="topbar academy-topbar">
-        <Link className="brand" href="/" aria-label="Enterprise AI Enablement home">
-          <span className="brand-copy">
-            <img className="brand-logo" src="/miller-logo-white.png" alt="Miller" />
-            <small>ENTERPRISE AI ENABLEMENT</small>
-          </span>
-        </Link>
-        <nav className="topnav" aria-label="Academy navigation">
-          <Link href="/">Overview</Link>
-          <Link className="current" href="/academy">AI Academy</Link>
-          <Link href="/ecosystem">How it works</Link>
-          <Link href="/#strategy">Strategy</Link>
-          <Link href="/#library">Resources</Link>
-        </nav>
-        <div className="academy-header-cta"><a href="mailto:?subject=Miller%20AI%20Academy">ASK ABOUT THE ACADEMY →</a></div>
-        <div className="edition">INTERNAL WORKING VIEW<br /><strong>NOT FOR DISTRIBUTION</strong></div>
-      </header>
+      <SiteHeader current="academy" />
 
       <main>
         <section className="academy-hero">
@@ -63,9 +49,9 @@ export default function AcademyPage() {
               <h2>START WITH<br />CURIOSITY</h2>
               <p>You do not need a polished idea, a business case, or prior coding experience. Choose the learning experience that matches what you need to do.</p>
               <ul>
-                <li><strong>04</strong><span>employee learning experiences</span></li>
+                <li><strong>03</strong><span>employee learning experiences</span></li>
                 <li><strong>02</strong><span>manager capability programs</span></li>
-                <li><strong>06</strong><span>leadership sessions</span></li>
+                <li><strong>02</strong><span>leadership offerings</span></li>
               </ul>
             </div>
           </div>
@@ -152,10 +138,27 @@ export default function AcademyPage() {
                 <small>ONE PLACE TO START</small>
                 <h3>NOT SURE WHICH EXPERIENCE FITS?</h3>
                 <p>AI Enablement can help you understand what is available and choose the right way to move.</p>
-                <a href="mailto:?subject=Miller%20AI%20Academy">ASK AI ENABLEMENT →</a>
+                <a href={FRONT_DOOR}>ASK AI ENABLEMENT →</a>
               </div>
             </aside>
           </div>
+
+          {audience === "Leaders" && (
+            <section className="leader-sessions" aria-label="Leadership sessions bookable individually">
+              <div className="academy-subhead"><span>ALSO BOOKABLE ON THEIR OWN</span><h3>THE SIX LEADERSHIP SESSIONS</h3></div>
+              <p className="leader-sessions-note">AI-Driven Leadership runs as a half day in three modules. Any session can also be booked individually for a leadership team or a single meeting.</p>
+              <div className="leader-session-grid">
+                {leaderSessions.map((session) => (
+                  <article key={session.id}>
+                    <div className="leader-session-head"><span>{session.module}</span><small>{session.format}</small></div>
+                    {session.framework && <b>{session.framework}</b>}
+                    <h4>{session.title}</h4>
+                    <p>{session.subtitle}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
         </section>
       </main>
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteHeader from "../site-header";
 import "./ecosystem.css";
 
 const ownership = {
@@ -21,19 +22,7 @@ const evidence = [
 export default function EcosystemPage() {
   return (
     <div className="ecosystem-page">
-      <header className="topbar ecosystem-topbar">
-        <Link className="brand" href="/" aria-label="Enterprise AI Enablement home">
-          <span className="brand-copy"><img className="brand-logo" src="/miller-logo-white.png" alt="Miller" /><small>ENTERPRISE AI ENABLEMENT</small></span>
-        </Link>
-        <nav className="topnav" aria-label="Ecosystem navigation">
-          <Link href="/">Overview</Link>
-          <Link href="/#strategy">Strategy</Link>
-          <Link className="current" href="/ecosystem">How it works</Link>
-          <Link href="/academy">AI Academy</Link>
-          <Link href="/#library">Resources</Link>
-        </nav>
-        <div className="edition">INTERNAL WORKING VIEW<br /><strong>NOT FOR DISTRIBUTION</strong></div>
-      </header>
+      <SiteHeader current="ecosystem" />
 
       <main>
         <section className="ecosystem-hero">
